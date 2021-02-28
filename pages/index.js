@@ -14,6 +14,7 @@ import Container from '@material-ui/core/Container'
 import { useRouter } from "next/router"
 import { useIntl } from "react-intl"
 import Link from 'next/link'
+import ArticleBrowse from '../containers/ArticleBrowse';
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -128,45 +129,11 @@ const Blog = () => {
             </Grid>
           </Paper>
           {/* End main featured post */}
-          {/* Sub featured posts */}
-          <Grid container spacing={4}>
-            {featuredPosts.map(post => (
-              <Grid item key={post.title} xs={12} md={6}>
-                <CardActionArea component="a" href="#">
-                  <Card className={classes.card}>
-                    <div className={classes.cardDetails}>
-                      <CardContent>
-                        <Typography component="h2" variant="h5">
-                          {post.title}
-                        </Typography>
-                        <Typography variant="subtitle1" color="textSecondary">
-                          {post.date}
-                        </Typography>
-                        <Typography variant="subtitle1" paragraph>
-                          {post.description}
-                        </Typography>
-                        <Typography variant="subtitle1" color="primary">
-                          Continue reading...
-                        </Typography>
-                      </CardContent>
-                    </div>
-                    <Hidden xsDown>
-                      <CardMedia
-                        className={classes.cardMedia}
-                        image="https://source.unsplash.com/random"
-                        title="Image title"
-                      />
-                    </Hidden>
-                  </Card>
-                </CardActionArea>
-              </Grid>
-            ))}
-          </Grid>
-          {/* End sub featured posts */}
         </main>
 
         <div>
       <h1>{messages("hello")}</h1>
+        <ArticleBrowse/>
         <p>{messages("welcomeMessage")}</p>
         <br />
         <p>Current locale: {locale}</p>
