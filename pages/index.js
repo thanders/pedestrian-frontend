@@ -5,49 +5,51 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import Hidden from '@material-ui/core/Hidden'
 import Container from '@material-ui/core/Container'
 import { useRouter } from "next/router"
 import { useIntl } from "react-intl"
 import Link from 'next/link'
 import ArticleBrowse from '../containers/ArticleBrowse';
+import AppHeaderBar from '../containers/AppBarHeader'
+import getLargeImage from '../Other/getLargeImage';
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
-    borderBottom: `1px solid ${theme.palette.divider}`
+    // borderBottom: `1px solid ${theme.palette.divider}`
+    marginTop: 20,
+    marginBottom: -20,
   },
   toolbarTitle: {
     flex: 1
   },
   mainFeaturedPost: {
     position: 'relative',
-    backgroundColor: theme.palette.grey[800],
+    backgroundColor: theme.palette.primary.dark,
     color: theme.palette.common.white,
+    paddingBottom: 0,
     marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://source.unsplash.com/user/erondu)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'
   },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    backgroundColor: 'rgba(0,0,0,.7)'
+  mainPostContainer: {
+    display: 'flex',
+  },
+  
+  mainPostText: {
+    flex: 1,
+  },
+  mainPostImage: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 10,
   },
   mainFeaturedPostContent: {
     position: 'relative',
-    padding: theme.spacing(3),
-    [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(6),
-      paddingRight: 0
-    }
+    padding: 50,
+    width: 600,
+    backgroundColor: theme.palette.primary.dark,
   },
   card: {
     display: 'flex'
@@ -86,63 +88,34 @@ const Blog = () => {
     <>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Toolbar className={classes.toolbar}>
-          <Typography
-            component="h2"
-            variant="h5"
-            color="inherit"
-            align="center"
-            noWrap
-            className={classes.toolbarTitle}
-          >
-            {messages("blogTitle")}
-          </Typography>
-        </Toolbar>
+        <AppHeaderBar/>
         <main>
           {/* Main featured post */}
           <Paper className={classes.mainFeaturedPost}>
             {/* Increase the priority of the hero background image */}
-            {
-              <img
-                style={{ display: 'none' }}
-                src="https://source.unsplash.com/user/erondu"
-                alt="background"
-              />
-            }
-            <div className={classes.overlay} />
-            <Grid container>
-              <Grid item md={6}>
-                <div className={classes.mainFeaturedPostContent}>
-                  <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    Title of a longer featured blog post
-                  </Typography>
-                  <Typography variant="h5" color="inherit" paragraph>
-                    Multiple lines of text that form the lede, informing new readers
-                    quickly and efficiently about what&apos;s most interesting in this
-                    post&apos;s contents.
-                  </Typography>
-                  <Link variant="subtitle1" href="#">
-                    Continue reading…
-                  </Link>
-                </div>
-              </Grid>
-            </Grid>
+            <div className={classes.mainPostContainer}>
+              <div className={classes.mainPostText}>
+                <Grid container>
+                  <Grid item md={6}>
+                    <div className={classes.mainFeaturedPostContent}>
+                      <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+                        Title of a longer featured blog post
+                      </Typography>
+                      <Typography variant="h5" color="inherit" paragraph>
+                        Multiple lines of text that form the lede, informing new readers
+                        quickly and efficiently about what&apos;s most interesting in this
+                        post&apos;s contents.
+                      </Typography>
+                    </div>
+                  </Grid>
+                </Grid>
+              </div>
+              <div className={classes.mainPostImage}>{getLargeImage('/veveySBB.jpg')}</div>
+            </div>
           </Paper>
           {/* End main featured post */}
         </main>
-
-        <div>
-      <h1>{messages("hello")}</h1>
         <ArticleBrowse/>
-        <p>{messages("welcomeMessage")}</p>
-        <br />
-        <p>Current locale: {locale}</p>
-        <p>Default locale: {defaultLocale}</p>
-        <p>Configured locales: {JSON.stringify(locales)}</p>
-        <Link href="/post/5">
-          <a>Go to pages/post/[5].js</a>
-        </Link>
-      </div>
       </Container>
     </>
   )

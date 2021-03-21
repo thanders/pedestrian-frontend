@@ -17,16 +17,6 @@ const useStyles = makeStyles(theme => ({
   toolbarTitle: {
     flex: 1
   },
-  mainFeaturedPost: {
-    position: 'relative',
-    backgroundColor: theme.palette.grey[800],
-    color: theme.palette.common.white,
-    marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://source.unsplash.com/user/erondu)',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center'
-  },
   overlay: {
     position: 'absolute',
     top: 0,
@@ -35,19 +25,12 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     backgroundColor: 'rgba(0,0,0,.7)'
   },
-  mainFeaturedPostContent: {
-    position: 'relative',
-    padding: theme.spacing(3),
-    [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(6),
-      paddingRight: 0
-    }
-  },
   card: {
-    display: 'flex'
+    display: 'flex',
+    backgroundColor: theme.palette.primary.dark,
   },
   cardDetails: {
-    flex: 1
+    flex: 1,
   },
   cardMedia: {
     width: 160
@@ -75,9 +58,6 @@ const ArticleBrowse = () => {
                     </Typography>
                     <Typography variant="subtitle1" paragraph>
                       {post.module.meta.description}
-                    </Typography>
-                    <Typography variant="subtitle1" color="primary">
-                      Continue reading...
                     </Typography>
                   </CardContent>
                 </div>
