@@ -1,14 +1,58 @@
 import BlogPost from '../../../components/BlogPost'
+import InfoBoard from '../../../components/InfoBoard/InfoBoard'
 
 export const meta = {
+  postId: 2,
   title: 'Second Article',
   description: 'Getting started with the second article',
-  date: 'November 04, 2020',
-  readTime: 2
+  date: 'September 20, 2020',
+  readTime: 2,
+  station: {
+    locationName: 'Müllheim, Baden-Württemberg, Germany',
+    owner: {
+      title: 'Deutsche Bahn',
+      link: 'https://www.sbb.ch/'
+    },
+    name: {
+      title: 'Müllheim (Baden)',
+      link: 'https://www.bahnhof.de/bahnhof-de/bahnhof/M-C3-BCllheim-28Baden-29-1023108'
+    },
+    wiki: {
+      link: 'https://en.wikipedia.org/wiki/M%C3%BCllheim_(Baden)_station'
+    },
+    ibnr: {
+      title: '80004223',
+      link: 'https://transitfeeds.com/p/deutsche-bahn/837/latest/stop/80004223'
+    },
+    map: {
+      link: 'https://goo.gl/maps/yYWpN7wpfAsfneBz8'
+    },
+    capacity: {
+      tracks: 4,
+      platforms: 5,
+    },
+    history: {
+      opened: 'June 1st 1847',
+    }
+  },
+  route: {
+    link: '/post/post-1'
+  }
 }
 
 export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
 
-## The second post
+## Article Two Headline
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.
+
+dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut. dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.
+
+
+<InfoBoard stationInfo={meta.station} />
+
+dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.
+
+dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut. dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.
+
+dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut. dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.

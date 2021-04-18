@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     width: '100%',
-    marginTop: 40,
+    marginTop: 0,
     marginBottom: 100, 
   },
   menuButton: {
