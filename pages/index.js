@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { emphasize, makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
 import { useRouter } from "next/router"
-import { useIntl } from "react-intl"
 import ArticleBrowse from '../containers/ArticleBrowse';
 import AppHeaderBar from '../containers/AppBarHeader'
 import MainBrowse from '../components/MainBrowse';
@@ -22,8 +21,6 @@ const useStyles = makeStyles(theme => ({
 
 const Blog = (props) => {
   const classes = useStyles()
-  const { formatMessage } = useIntl()
-  const messages = id => formatMessage({ id })
   const router = useRouter()
   const { locale, locales, defaultLocale } = router
 
@@ -40,7 +37,6 @@ const Blog = (props) => {
     if(post.postId !== primaryPostId)
     return post
   });
-  console.log('secondary', secondary);
 
   return (
     <>
@@ -66,9 +62,7 @@ const removeIndex = (array, index) =>{
 
 
 export function getStaticProps(context) {
-  console.log('context', context);
   // Call an external API endpoint to get posts
-  console.log('posts', posts);
   const secondaryObj = posts.map((post) => {
     return(
       {

@@ -1,7 +1,7 @@
-import Image from 'next/image'
+import Img from 'react-optimized-image';
 
 function getImage(path) {
-  return <Image src={path} alt="me" width="64" height="64" />
+  return <Img src={path} />
 }
 
 export default getImage

@@ -40,7 +40,6 @@ const ArticleBrowse = (props) => {
   const classes = useStyles();
 
   const {posts} = props;
-  console.log('posts', posts);
   return (
       <>
         <Grid container spacing={4}>

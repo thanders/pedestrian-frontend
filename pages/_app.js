@@ -37,16 +37,13 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const { locale, defaultLocale, pathname } = router;
   const localeCopy = locales[locale];
-  const messages = localeCopy[pathname];
 
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const start = () => {
-      console.log("start");
       setLoading(true);
     };
     const end = () => {
-      console.log("findished");
       setLoading(false);
     };
     Router.events.on("routeChangeStart", start);
@@ -64,7 +61,6 @@ function MyApp({ Component, pageProps }) {
       <IntlProvider
       locale={locale}
       defaultLocale={defaultLocale}
-      messages={messages}
       >
         {loading ? (
           <div className={classes.root}>

@@ -42,7 +42,6 @@ const useStyles = makeStyles(theme => ({
 const MainBrowse = (post) => {
   const [ready, setReady] = useState(false);
   const classes = useStyles();
-  console.log('the prop post', post);
 
   useEffect(() => {
     setReady(true);
@@ -67,7 +66,9 @@ const MainBrowse = (post) => {
             </Grid>
           </Grid>
         </div>
-        <div className={classes.mainPostImage}>{getLargeImage('/veveySBB.jpg')}</div>
+        <div className={classes.mainPostImage}>
+          { /* getLargeImage('/veveySBB.jpg') */ }
+          </div>
       </div>
       </CardActionArea>
     </Link>

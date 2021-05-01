@@ -1,7 +1,7 @@
-import Image from 'next/image'
+import Img from 'react-optimized-image';
 
 function getLargeImage(path) {
-  return <Image src={path} alt="me" width="600" height="280" />
+  return <Img src={require(path)}/>
 }
 
 export default getLargeImage
