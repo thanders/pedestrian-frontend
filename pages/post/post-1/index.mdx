@@ -1,14 +1,58 @@
 import BlogPost from '../../../components/BlogPost'
+import InfoBoard from '../../../components/InfoBoard/InfoBoard'
 
 export const meta = {
-  title: 'Introduction to Next.js',
-  description: 'Getting started with the Next framework',
+  postId: 1,
+  title: 'First Article',
+  description: 'Getting started with the first article',
   date: 'Aug 04, 2020',
-  readTime: 2
+  readTime: 2,
+  station: {
+    locationName: 'Lucerne, Switzerland',
+    owner: {
+      title: 'SBB CFF FFS',
+      link: 'https://www.sbb.ch/'
+    },
+    name: {
+      title: 'Luzerne Bahnhof',
+      link: 'https://www.sbb.ch/en/station-services/at-the-station/railway-stations/lucerne-station.html'
+    },
+    wiki: {
+      link: 'https://en.wikipedia.org/wiki/Lucerne_railway_station'
+    },
+    ibnr: {
+      title: '8000026',
+      link: 'https://transitfeeds.com/p/deutsche-bahn/837/latest/stop/8000026'
+    },
+    map: {
+      link: 'https://goo.gl/maps/sWu719quU6MRP8JE9'
+    },
+    capacity: {
+      tracks: 14,
+      platforms: 7,
+    },
+    history: {
+      opened: 1856,
+    }
+  },
+  route: {
+    link: '/post/post-1'
+  }
 }
 
 export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
 
-## My Headline
+## Article One Headline
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.
+
+dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut. dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.
+
+
+<InfoBoard stationInfo={meta.station} />
+
+dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.
+
+dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut. dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.
+
+dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut. dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.
