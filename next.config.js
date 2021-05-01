@@ -13,4 +13,5 @@ module.exports = withMDX({
     // a non-locale prefixed path e.g. `/hello`
     defaultLocale: "en",
   },
+  trailingSlash: true,
 });
