@@ -6,12 +6,19 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppHeaderBar from '../containers/AppBarHeader'
 import { useRouter } from "next/router"
 import React, { useState, useEffect } from 'react';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles(theme => ({
   containerCSS: {
     backgroundColor: theme.palette.primary,
     padding: 50,
     width: '90%'
+  },
+  containerSmall: {
+    backgroundColor: theme.palette.primary,
+    paddingLeft: 10,
+    paddingRight: 10,
+    width: '100%'
   },
 }))
 
@@ -27,6 +34,8 @@ export default function BlogPost({ children, meta}) {
       } = router
   }, [router.isReady]);
 
+  const matches = useMediaQuery(theme => theme.breakpoints.up('md'));
+
   return (
     <>
       <CssBaseline />
@@ -38,7 +47,7 @@ export default function BlogPost({ children, meta}) {
       </Head>
       <AppHeaderBar />
       <article>
-        <Container className={classes.containerCSS} maxWidth="lg">
+        <Container className={matches ? classes.containerCSS: classes.containerSmall} maxWidth="xl">
           {children}
         </Container>
       </article>
