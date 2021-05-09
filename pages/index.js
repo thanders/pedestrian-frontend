@@ -33,10 +33,14 @@ const Blog = (props) => {
 
   const primaryPostId =1;
   const primary = props.otherPosts.find(post => post.postId === primaryPostId);
+  const secondary = props.otherPosts;
+  /*
   const secondary = props.otherPosts.filter(post => {
     if(post.postId !== primaryPostId)
     return post
   });
+  */
+  console.log('link', secondary);
 
   return (
     <>
@@ -44,7 +48,7 @@ const Blog = (props) => {
       <AppHeaderBar/>
       <Container maxWidth="lg">
         <main>
-          <MainBrowse post={primary}/>
+          { /* <MainBrowse post={primary}/> */}
           <ArticleBrowse posts={secondary} />
         </main>
       </Container>

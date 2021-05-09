@@ -22,8 +22,9 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 20,
     marginRight: 20,
     marginBottom: theme.spacing(4),
-    width: 600,
-    float: 'right'
+    width: 800,
+    float: 'right',
+    fontSize: 'large',
   },
   containerCenter: {
     position: 'relative',
@@ -59,7 +60,7 @@ const useStyles = makeStyles(theme => ({
     padding: 10,
     color: 'white',
     justifyContent: 'space-between',
-    height: 36
+    height: 45
   },
   infoRowRed: {
     display: 'flex',
@@ -98,7 +99,7 @@ const useStyles = makeStyles(theme => ({
   mainFeaturedPostContent: {
     position: 'relative',
     padding: 50,
-    width: 600,
+    width: 800,
     backgroundColor: theme.palette.primary.dark,
   },
 
@@ -141,10 +142,7 @@ const InfoBoard = (stationInfo) => {
         md= {6}
         {...commonGridProps}
       >
-        <Grid item xs={4}>
-          <Paper className={classes.infoRow}>Test</Paper>
-        </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={12}>
           <Paper className={classes.infoConstructed} title='Station opening date'>
             <EventIcon fontSize='small' style={{ marginRight: 8 }} />  {station.history.opened}
           </Paper>
@@ -160,7 +158,7 @@ const InfoBoard = (stationInfo) => {
           < Paper className={classes.infoRow}> {station.locationName} </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.infoRow}> - </Paper>
+          <Paper className={classes.infoRow}> Passengers - 97,900 / day </Paper>
         </Grid>
       </Grid>
       
@@ -171,10 +169,7 @@ const InfoBoard = (stationInfo) => {
         {...commonGridProps}
         className={matches ? '' : classes.section}
       >
-          <Grid item xs={3} md= {3}>
-          < Paper className={classes.infoRow}>Test</Paper>
-          </Grid>
-        <Grid item xs={9} md= {9}>
+        <Grid item xs={12} md= {12}>
           <CardActionArea component="a" href={station.owner.link} target='blank' title={ownerToolTip} >
             < Paper className={classes.infoRowRed}>
               {station.owner.title}

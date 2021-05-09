@@ -12,13 +12,15 @@ const useStyles = makeStyles(theme => ({
   containerCSS: {
     backgroundColor: theme.palette.primary,
     padding: 50,
-    width: '90%'
+    width: '90%',
+    fontSize: 'large',
   },
   containerSmall: {
     backgroundColor: theme.palette.primary,
     paddingLeft: 10,
     paddingRight: 10,
-    width: '100%'
+    width: '100%',
+    fontSize: 'large',
   },
 }))
 
@@ -42,8 +44,16 @@ export default function BlogPost({ children, meta}) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
-        <meta name="Description" content={meta.description}></meta>
+        <meta name="Description" content={meta.description} />
         <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
++       <meta property="og:title" content={meta.title} key="ogtitle" />
++       <meta property="og:description" content={meta.description} key="ogdesc"/>
+        <meta property="og:url" content="https://pedestrian-frontend.vercel.app/"/>
+        <meta property="og:image" content="https://pedestrian-frontend.vercel.app/veveySBB.jpg"/>
+        <meta property="og:type" content="article" />
+        <meta property="og:image:width" content="300"/>
+        <meta property="og:image:height" content="300"/>
       </Head>
       <AppHeaderBar />
       <article>

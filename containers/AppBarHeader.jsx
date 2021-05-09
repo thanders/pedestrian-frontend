@@ -5,6 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Link from 'next/link'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,8 +49,10 @@ const AppBarHeader = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
-        <Typography className={classes.title} variant="h5" noWrap>
-            Title Placeholder
+          <Typography className={classes.title} variant="h5" noWrap>
+            <Link href={'/'}>
+              Title
+            </Link>
           </Typography>
           <div className={classes.spacer}/>
           <Typography className={classes.title} variant="h5" noWrap edge="end">
