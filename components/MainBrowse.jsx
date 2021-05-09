@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
   mainFeaturedPostContent: {
     position: 'relative',
-    padding: 50,
+    padding: 16,
     width: 600,
     backgroundColor: theme.palette.primary.dark,
   },
