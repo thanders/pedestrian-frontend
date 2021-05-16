@@ -29,5 +29,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 npm run dev
 
 ## Deploy to AWS
+npm run build
+
 aws s3 sync ./out/ s3://[yourBucket]/
 
